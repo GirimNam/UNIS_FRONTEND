@@ -132,6 +132,7 @@ h1 {
 }
 
 .hand {
+  display: flex;
   position: absolute;
   right: 0;
   top: 400px; 
@@ -142,14 +143,7 @@ h1 {
   padding: 0;
 }
 
-@media (max-width: 768px) {
-  .hand {
-    top: 250px;         
-    right: -20px;       
-    width: 60vw;        
-    height: auto;       
-  }
-}
+
 
 /* How-to 섹션 */
 .howto {
