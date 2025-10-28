@@ -42,13 +42,13 @@ html, body {
   left: 86.25%;
   right: 3.88%;
   top: 7%;
-  /* bottom 값은 불필요해서 제거 (absolute 시 충돌 가능) */
+ 
   width: 158px;
   height: 45px;
   cursor: pointer;
 }
 
-/* 구분선 */
+
 .sbox1 {
   position: absolute;
   top: 520px;

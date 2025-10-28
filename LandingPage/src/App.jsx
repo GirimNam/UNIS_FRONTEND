@@ -15,7 +15,7 @@ export default function App() {
       <Route
         path="/"
         element={
-          <div>
+          <div style={{position: "relative" }}>
             <Header />
             <div className="sbox1" />
             <Hero />
