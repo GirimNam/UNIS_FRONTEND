@@ -1,42 +1,363 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* styles.css (React 용) */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* 폭 정책이 혼재: 고정 1600px + 100% 동시 사용 → 반응형 의도면 100%만 쓰고 최소폭 지정 */
+  width: 100%;
+  min-width: 1600px;
+
+  height: 5700px;
+  font-family: 'Pretendard', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  background: linear-gradient(
+    174deg,
+    rgba(1, 17, 41, 1) 0%,
+    rgba(4, 60, 143, 1) 52%,
+    rgba(0, 8, 80, 1) 100%
+  );
+}
+
+.logo1 {
+  width: 316.2px;
+  height: 69.5px; /* px 누락 수정 */
+  position: absolute;
+  top: 5%;
+  left: 3%;
+}
+
+.loginButton {
+  background: #FFE99E;
+  border-radius: 8px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
   text-align: center;
+  letter-spacing: -0.5px;
+  color: #021C41;
+
+  position: absolute;
+  left: 86.25%;
+  right: 3.88%;
+  top: 7%;
+  /* bottom 값은 불필요해서 제거 (absolute 시 충돌 가능) */
+  width: 158px;
+  height: 45px;
+  cursor: pointer;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* 구분선 */
+.sbox1 {
+  position: absolute;
+  top: 520px;
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(90deg, #032354 4%, #95BFFF 90%);
+  margin: 0;
 }
 
-@keyframes logo-spin {
+.sbox2 {
+  position: absolute;
+  top: 1309px;
+  width: 1530px;
+  height: 12px;
+  background: linear-gradient(90deg, #95BFFF 4%, #021E48 90%);
+  margin: 0;
+}
+
+/* Hero 박스 */
+.box1 {
+  display: flex;
+  position: absolute;
+  top: 600px;
+
+  width: 100%;
+  min-width: 1600px; /* 기존 1699px 고정폭 대신 최소폭 권장 */
+  height: 641px;
+
+  background: linear-gradient(
+    134deg,
+    rgba(213.32, 229.83, 255, 0.30) 0%,
+    rgba(47.34, 124.56, 240.39, 0.30) 100%
+  );
+  border-style: solid;
+  border-width: 4px 0;
+  border-color: transparent;
+  border-image: linear-gradient(to right, #FFFFFF, #468AF0) 1;
+}
+
+.box_text {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+/* 전역 h1은 범위가 넓어 충돌 소지 → 이후 필요 시 .box_text h1 처럼 범위를 좁혀 사용 권장 */
+h1 {
+  font-family: "Pretendard-Bold", Helvetica, 'Pretendard', Arial, sans-serif;
+  font-weight: 700;
+  color: #ffe99e;
+  font-size: 60px;
+  letter-spacing: 0;
+  line-height: 53px;
+}
+
+.text1 {
+  width: 621px;
+  height: 170.86px;
+  padding-top: 30px;
+  opacity: 0.70;
+  color: white;
+  font-size: 26.29px;
+  font-family: Pretendard, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 49.29px;
+  word-wrap: break-word;
+}
+
+.install {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.image-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hand {
+  position: absolute;
+  right: 0;
+  top: 400px; /* 기존 top: 400px의 의미가 없어 보였는데 명시 */
+  width: 800px;
+  height: 1200px;
+  transform-origin: top left;
+  /* rotate(0deg)는 제거해도 동일 */
+  margin: 0;
+  padding: 0;
+}
+
+/* How-to 섹션 */
+.howto {
+  position: relative;
+  top: 1414px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* 중복 속성 정리 */
+  align-items: center;
+  justify-content: center;
+  gap: 95px;
+  padding-top: 200px;
+}
+
+.orangel {
+  background-color: #FFAC19;
+  height: 14px;
+  width: 412px;
+  border-radius: 7px;
+}
+
+.howtotext {
+  color: #FFAC19;
+  font-size: 45px;
+  font-family: 'Pretendard';
+  font-weight: bold;
+  text-align: center;
+  max-width: 800px;
+}
+
+.howtotext p {
+  margin: 0;
+}
+
+.round_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 공통 라운드 박스 그라데이션 */
+.round_box1,
+.round_box2,
+.round_box3 {
+  width: 1287px;
+  height: 700px;
+  background: linear-gradient(
+    102deg,
+    rgba(213, 230, 255, 0.5) 0%,
+    rgba(47, 125, 240, 0.5) 100%
+  );
+  border-radius: 50px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #D5E6FF;
+  display: flex;
+  align-items: center;
+  /* 각 박스별 배치만 개별 지정 */
+  position: absolute;
+}
+
+.round_box1 { top: 2100px; justify-content: center; }
+.round_box2 { top: 3100px; }
+.round_box3 { top: 4100px; }
+
+/* Report */
+.report_texth {
+  font-family: "Pretendard-Bold", Helvetica, 'Pretendard', Arial, sans-serif;
+  font-weight: 700;
+  color: #ffe99e;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: 53px;
+}
+
+.report_textp {
+  width: 400px;
+  opacity: 0.70;
+  color: white;
+  font-size: 19px;
+  font-family: Pretendard, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 35px;
+  word-wrap: break-word;
+}
+
+.report_text {
+  position: absolute;
+  left: 5%;
+  padding: 0 100px 0 50px;
+}
+
+.report {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  width: 600px;
+  height: 650px;
+}
+
+/* Chatting */
+.chatting_img {
+  position: absolute;
+  left: 0;
+  width: auto;
+  height: 700px;
+}
+
+.chatting_text {
+  position: absolute;
+  right: 8%;
+  width: 400px; /* 단위 누락 수정 */
+}
+
+.chattingh {
+  font-family: "Pretendard-Bold", Helvetica, 'Pretendard', Arial, sans-serif;
+  font-weight: 700;
+  color: #ffe99e;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: 53px;
+}
+
+.chattingt {
+  width: 400px;
+  opacity: 0.70;
+  color: white;
+  font-size: 19px;
+  font-family: Pretendard, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 35px;
+  word-wrap: break-word;
+}
+
+/* List */
+.list_text {
+  position: absolute;
+  left: 8%;
+}
+
+.list_texth {
+  font-family: "Pretendard-Bold", Helvetica, 'Pretendard', Arial, sans-serif;
+  font-weight: 700;
+  color: #ffe99e;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: 53px;
+}
+
+.list_textp {
+  opacity: 0.70;
+  color: white;
+  font-size: 19px;
+  font-family: Pretendard, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 35px;
+  word-wrap: break-word;
+}
+
+/* 배치 이미지 */
+.list1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.list2 {
+  position: absolute;
+  top: 4100px;
+  right: 3%;
+}
+
+/* Footer 로고 */
+.logo2 {
+  position: absolute;
+  top: 5200px;
+  /* absolute 요소에 margin-bottom은 효과 미미 */
+}
+
+
+@keyframes fadeUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(2px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.box1 {
+  opacity: 0;
+  animation: fadeUp 700ms ease-out 120ms both; 
+  will-change: opacity, transform; 
 }
 
-.card {
-  padding: 2em;
+.hand {
+  opacity: 0;
+  animation: fadeUp 700ms ease-out 120ms both; 
+  will-change: opacity, transform; 
 }
 
-.read-the-docs {
-  color: #888;
+.sbox1 {
+  opacity: 0;
+  animation: fadeUp 700ms ease-out 120ms both; 
+  will-change: opacity, transform; 
 }
+
+.sbox2 {
+  opacity: 0;
+  animation: fadeUp 700ms ease-out 120ms both; 
+  will-change: opacity, transform; 
+}
+
+

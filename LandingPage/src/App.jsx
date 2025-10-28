@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header.jsx";
+import Hero from "./components/Hero.jsx";
+import HowTo from "./components/HowTo.jsx";
+import SectionReport from "./components/SectionReport.jsx";
+import SectionChat from "./components/SectionChat.jsx";
+import SectionList from "./components/SectionList.jsx";
+import FooterLogo from "./components/FooterLogo.jsx";
+import Login from "./Login.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Routes>
+      {/* 랜딩 페이지 */}
+      <Route
+        path="/"
+        element={
+          <div>
+            <Header />
+            <div className="sbox1" />
+            <Hero />
+            <div className="sbox2" />
+            <img className="hand" src="/핸드폰 시작(손 포함).png" alt="phone with hand" />
+            <HowTo />
+            <div className="round_box">
+              <SectionReport />
+              <SectionChat />
+              <SectionList />
+              <FooterLogo />
+            </div>
+            <img className="list2" src="/체크리스트(윗면짤림).png" alt="checklist2" />
+          </div>
+        }
+      />
 
-export default App
+      {/* 로그인 페이지 */}
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  );
+}
