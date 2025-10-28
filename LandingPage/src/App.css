@@ -94,7 +94,7 @@ html, body {
   left: 10%;
 }
 
-/* 전역 h1은 범위가 넓어 충돌 소지 → 이후 필요 시 .box_text h1 처럼 범위를 좁혀 사용 권장 */
+
 h1 {
   font-family: "Pretendard-Bold", Helvetica, 'Pretendard', Arial, sans-serif;
   font-weight: 700;
@@ -134,11 +134,10 @@ h1 {
 .hand {
   position: absolute;
   right: 0;
-  top: 400px; /* 기존 top: 400px의 의미가 없어 보였는데 명시 */
+  top: 400px; 
   width: 800px;
   height: 1200px;
-  transform-origin: top left;
-  /* rotate(0deg)는 제거해도 동일 */
+ 
   margin: 0;
   padding: 0;
 }
@@ -360,16 +359,6 @@ h1 {
   will-change: opacity, transform; 
 }
 
-@media (max-width: 480px) {
-  .hand {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 90%;
-    max-width: 340px;
-    height: auto;
-    margin: 24px auto 0;
-  }
-}
+
 
 
