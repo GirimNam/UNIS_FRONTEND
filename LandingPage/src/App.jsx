@@ -28,7 +28,7 @@ export default function App() {
               <SectionList />
               <FooterLogo />
             </div>
-            <img className="list2" src="/체크리스트(윗면짤림).png" alt="checklist2" />
+            
           </div>
         }
       />

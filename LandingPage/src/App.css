@@ -311,8 +311,8 @@ h1 {
 
 .list2 {
   position: absolute;
-  top: 4100px;
-  right: 3%;
+  top: 0;
+  padding-left: 42%;
 }
 
 /* Footer 로고 */
@@ -358,6 +358,18 @@ h1 {
   opacity: 0;
   animation: fadeUp 700ms ease-out 120ms both; 
   will-change: opacity, transform; 
+}
+
+@media (max-width: 480px) {
+  .hand {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 90%;
+    max-width: 340px;
+    height: auto;
+    margin: 24px auto 0;
+  }
 }
 
 

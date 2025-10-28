@@ -12,6 +12,7 @@ export default function SectionList() {
         </p>
       </div>
       <img className="list1" src="/체크리스트(아랫면 짤림).png" alt="checklist1" />
+      <img className="list2" src="/체크리스트(윗면짤림).png" alt="checklist2" />
     </div>
   );
 }
